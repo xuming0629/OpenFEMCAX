@@ -1,0 +1,6 @@
+﻿<RCC>
+    <qresource prefix="QtRabbion">
+     <file>font/msyh.ttc</file>
+     <file>img/SA.svg</file>
+    </qresource>
+</RCC>
