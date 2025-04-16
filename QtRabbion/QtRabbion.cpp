@@ -4,6 +4,8 @@
 #include <QTextEdit>
 #include <QTimer>
 
+
+
 QtRabbion::QtRabbion(QWidget* parent)
     : SARibbonMainWindow(parent)
 {
@@ -30,6 +32,9 @@ QtRabbion::QtRabbion(QWidget* parent)
     QTimer::singleShot(0, this, [this]() {
         this->setRibbonTheme(SARibbonTheme::RibbonThemeOffice2016Blue);
         });
+
+    _simpleWindow = new graph3DWindow(this);
+    setCentralWidget(_simpleWindow);  // ✅ 嵌入 central widget 显示在 Ribbon 下方
 }
 
 QtRabbion::~QtRabbion() {}
@@ -46,15 +51,37 @@ void QtRabbion::createCategoryPages() {
 
 
 
-    // 网格类别
-    SARibbonCategory* mesh_Page = ribbonBar()->addCategoryPage(tr("网格"));
-    mesh_Page->setObjectName("mesh_Page");
 
-    // 求解类别
-    SARibbonCategory* solution_Page = ribbonBar()->addCategoryPage(tr("求解"));
+    SARibbonPannel* viewPanel = geo_Page->addPannel(tr("视角"));
+   /* QAction* actXPlus = new QAction(tr("X+"), this);
+    QAction* actXMinus = new QAction(tr("X-"), this);
+    QAction* actYPlus = new QAction(tr("Y+"), this);
+    QAction* actYMinus = new QAction(tr("Y-"), this);
+    QAction* actZPlus = new QAction(tr("Z+"), this);
+    QAction* actZMinus = new QAction(tr("Z-"), this);*/
 
-    // 帮助类别
-    SARibbonCategory* help_Page = ribbonBar()->addCategoryPage(tr("帮助"));
+
+
+
+    viewPanel->addLargeAction(new QAction(QIcon("./img/xPlus.png"), tr("立方体"), this));
+    viewPanel->addLargeAction(new QAction(QIcon("./img/yMinus.png"), tr("立方体"), this));
+    viewPanel-> addLargeAction(new QAction(QIcon("./img/yPlus.png"), tr("立方体"), this));
+    viewPanel-> addLargeAction(new QAction(QIcon("./img/zMinus"), tr("立方体"), this));
+    //viewPanel-> addLargeAction(new QAction(QIcon("./img/box.png"), tr("立方体"), this));;
+    //viewPanel-> addLargeAction(new QAction(QIcon("./img/box.png"), tr("立方体"), this));
+
+
+  
+
+    //// 网格类别
+    //SARibbonCategory* mesh_Page = ribbonBar()->addCategoryPage(tr("网格"));
+    //mesh_Page->setObjectName("mesh_Page");
+
+    //// 求解类别
+    //SARibbonCategory* solution_Page = ribbonBar()->addCategoryPage(tr("求解"));
+
+    //// 帮助类别
+    //SARibbonCategory* help_Page = ribbonBar()->addCategoryPage(tr("帮助"));
 }
 
 

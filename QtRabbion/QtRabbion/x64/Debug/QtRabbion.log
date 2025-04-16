@@ -1,8 +1,1 @@
-﻿   Qt/MSBuild: 3.3.1.1
-  Reading Qt configuration (D:/soft/tools/Qt/6.8.3/msvc2022_64/bin/qmake)
-   Qt: 6.8.3
-  moc QtRabbion.h
-  QtRabbion.cpp
-  main.cpp
-  moc_QtRabbion.cpp
-  QtRabbion.vcxproj -> D:\study\OpenFEMCAX\QtRabbion\x64\Debug\QtRabbion.exe
+﻿  QtRabbion.vcxproj -> E:\work2025\OpenFEMCAX\QtRabbion\x64\Debug\QtRabbion.exe

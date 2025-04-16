@@ -43,5 +43,18 @@
     <ClCompile Include="QtRabbion.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="graph3DWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="graph3DWindow.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="..\..\FastCAE\src\ModuleBase\graph3DWindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

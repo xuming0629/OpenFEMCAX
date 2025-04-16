@@ -2,7 +2,9 @@
 
 #include <QtWidgets/QMainWindow>
 #include "SARibbonMainWindow.h"
+#include "graph3DWindow.h"
 #include "ui_QtRabbion.h"
+
 
 class SARibbonCategory;
 class SARibbonPannel;
@@ -17,11 +19,12 @@ public:
 
 private:
     // 初始化 Ribbon 工具栏
-    void createRibbon();
+    //void createRibbon();
 
     // 创建 Ribbon 页和各个类别
     void createCategoryPages();
 
 private:
     Ui::QtRabbionClass ui;  // UI 类的实例，用于访问 Qt Designer 设计的 UI 组件
+    graph3DWindow* _simpleWindow = nullptr;
 };
