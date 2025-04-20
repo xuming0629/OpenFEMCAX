@@ -92,11 +92,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <QtRcc Include="QtRabbion.qrc" />
-    <QtUic Include="..\..\FastCAE\src\ModuleBase\graph3DWindow.ui" />
     <QtUic Include="QtRabbion.ui" />
     <QtMoc Include="QtRabbion.h" />
-    <ClCompile Include="FileName.cpp" />
-    <ClCompile Include="graph3DWindow.cpp" />
     <ClCompile Include="QtRabbion.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
@@ -104,9 +101,6 @@
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="graph3DWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

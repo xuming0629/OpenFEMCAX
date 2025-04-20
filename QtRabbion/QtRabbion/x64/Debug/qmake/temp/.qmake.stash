@@ -6,8 +6,10 @@ QMAKE_CXX.COMPILER_MACROS = \
     QMAKE_MSC_VER \
     QMAKE_MSC_FULL_VER
 QMAKE_CXX.INCDIRS = \
-    E:\\work2025\\QtRabbion\\bin_qt6.8.3_MSVC_x64\\include \
-    E:\\work2025\\QtRabbion\\bin_qt6.8.3_MSVC_x64\\include\\SARibbonBar \
+    ./bin_qt6.8.3_MSVC_x64/include \
+    ./bin_qt6.8.3_MSVC_x64/include/SARibbonBar \
+    ./3rdparty/vtk-9.4.1-x64/include \
+    ./3rdparty/vtk-9.4.1-x64/include/vtk-9.4 \
     "D:\\tools\\vs2019\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\include" \
     "D:\\tools\\vs2019\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\atlmfc\\include" \
     "D:\\tools\\vs2019\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\include" \
@@ -19,7 +21,8 @@ QMAKE_CXX.INCDIRS = \
     "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\cppwinrt" \
     "C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um"
 QMAKE_CXX.LIBDIRS = \
-    E:\\work2025\\QtRabbion\\bin_qt6.8.3_MSVC_x64\\lib \
+    ./bin_qt6.8.3_MSVC_x64/lib \
+    ./3rdparty/vtk-9.4.1-x64/lib \
     "D:\\tools\\vs2019\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\lib\\x64" \
     "D:\\tools\\vs2019\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.43.34808\\atlmfc\\lib\\x64" \
     "D:\\tools\\vs2019\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\VS\\lib\\x64" \

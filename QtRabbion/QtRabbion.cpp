@@ -5,39 +5,65 @@
 #include <QTimer>
 
 
-
-QtRabbion::QtRabbion(QWidget* parent)
-    : SARibbonMainWindow(parent)
-{
-    setWindowIcon(QIcon("./img/SA.svg"));
-    setMinimumWidth(500);
-    showMaximized();
-
-    // 设置应用程序按钮文本
-    SARibbonBar* ribbon = ribbonBar();
-    if (ribbon->applicationButton()) {
-        ribbon->applicationButton()->setText(tr("文件"));
-    }
-
-    // 创建不同类别页面
-    createCategoryPages();
-
-    // 添加文本编辑框作为主界面
-    QTextEdit* edit = new QTextEdit(this);
-    setCentralWidget(edit);
-
-    setMinimumWidth(500);
-    showMaximized();
-
+void QtRabbion::setupRibbonTheme() {
     QTimer::singleShot(0, this, [this]() {
-        this->setRibbonTheme(SARibbonTheme::RibbonThemeOffice2016Blue);
+        this->setRibbonTheme(SARibbonTheme::RibbonThemeOffice2021Blue);
         });
+}
 
-    _simpleWindow = new graph3DWindow(this);
-    setCentralWidget(_simpleWindow);  // ✅ 嵌入 central widget 显示在 Ribbon 下方
+QtRabbion::QtRabbion(QWidget* par, SARibbonMainWindowStyles style) : SARibbonMainWindow(par, style)
+//QtRabbion::QtRabbion(QWidget* par) : SARibbonMainWindow(par)
+{
+	setWindowTitle(("ribbon use native frame test[*]"));
+	setWindowModified(true);
+	mTextedit = new QTextEdit(this);
+	setCentralWidget(mTextedit);
+	//setStatusBar(new QStatusBar());
+
+	SARibbonBar* ribbon = ribbonBar();
+    this->setRibbonTheme(SARibbonTheme::RibbonThemeOffice2016Blue);
+	//! 通过setContentsMargins设置ribbon四周的间距
+	ribbon->setContentsMargins(5, 0, 5, 0);
+
+	connect(ribbon, &SARibbonBar::actionTriggered, this, [this](QAction* action) {
+		mTextedit->append(QString("action object name=%1 triggered").arg(action->objectName()));
+		});
+
+	
+
+    /////////////////////////////////////////
+    setupRibbonTheme();
+    /////////////////////////////////////////
+
+    createCategoryPages();
+    ////////////////////////////////////////
+
+
+	//setMinimumWidth(500);
+	QRect screenGeometry = QGuiApplication::primaryScreen()->availableGeometry();
+	int screenWidth = screenGeometry.width();
+	int screenHeight = screenGeometry.height();
+    // 建议替换部分
+    double scale = 0.85;  // 缩放比例：85%
+    int targetWidth = static_cast<int>(screenWidth * scale);
+    int targetHeight = static_cast<int>(screenHeight * scale);
+    resize(targetWidth, targetHeight);
+    move((screenWidth - targetWidth) / 2, (screenHeight - targetHeight) / 2);
+
+	setWindowIcon(QIcon("./img/SA.svg"));
+
+	connect(ribbon, &SARibbonBar::currentRibbonTabChanged, this, [this](int v) {
+		mTextedit->append(QString("SARibbonBar::currentRibbonTabChanged(%1)").arg(v));
+		});
+	//! 全屏显示
+	showMaximized();
 }
 
 QtRabbion::~QtRabbion() {}
+
+
+
+
 
 void QtRabbion::createCategoryPages() {
     // 几何类别
@@ -48,8 +74,6 @@ void QtRabbion::createCategoryPages() {
     geoPanel->addLargeAction(new QAction(QIcon("./img/cylinder.png"), tr("圆柱"), this));
     geoPanel->addLargeAction(new QAction(QIcon("./img/sphere.png"), tr("球体"), this));
     geoPanel->addLargeAction(new QAction(QIcon("./img/torus.png"), tr("环面"), this));
-
-
 
 
     SARibbonPannel* viewPanel = geo_Page->addPannel(tr("视角"));
@@ -63,10 +87,10 @@ void QtRabbion::createCategoryPages() {
 
 
 
-    viewPanel->addLargeAction(new QAction(QIcon("./img/xPlus.png"), tr("立方体"), this));
-    viewPanel->addLargeAction(new QAction(QIcon("./img/yMinus.png"), tr("立方体"), this));
-    viewPanel-> addLargeAction(new QAction(QIcon("./img/yPlus.png"), tr("立方体"), this));
-    viewPanel-> addLargeAction(new QAction(QIcon("./img/zMinus"), tr("立方体"), this));
+    viewPanel->addLargeAction(new QAction(QIcon("./img/xPlus.png"), tr("xPlus"), this));
+    viewPanel->addLargeAction(new QAction(QIcon("./img/yMinus.png"), tr("yMinus"), this));
+    viewPanel-> addLargeAction(new QAction(QIcon("./img/yPlus.png"), tr("yPlus"), this));
+    viewPanel-> addLargeAction(new QAction(QIcon("./img/zMinus.png"), tr("zMinus"), this));
     //viewPanel-> addLargeAction(new QAction(QIcon("./img/box.png"), tr("立方体"), this));;
     //viewPanel-> addLargeAction(new QAction(QIcon("./img/box.png"), tr("立方体"), this));
 
@@ -83,5 +107,6 @@ void QtRabbion::createCategoryPages() {
     //// 帮助类别
     //SARibbonCategory* help_Page = ribbonBar()->addCategoryPage(tr("帮助"));
 }
+
 
 

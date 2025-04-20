@@ -1,1 +1,5 @@
-﻿  QtRabbion.vcxproj -> E:\work2025\OpenFEMCAX\QtRabbion\x64\Debug\QtRabbion.exe
+﻿  moc QtRabbion.h
+  QtRabbion.cpp
+  main.cpp
+  moc_QtRabbion.cpp
+  QtRabbion.vcxproj -> E:\work2025\OpenFEMCAX\QtRabbion\x64\Debug\QtRabbion.exe

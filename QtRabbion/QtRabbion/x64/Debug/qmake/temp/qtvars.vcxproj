@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="&apos;$(Configuration)|$(Platform)&apos;==&apos;Debug|x64&apos;">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\xuming\AppData\Local\Temp\zacq4ixk.pid;D:\tools\Qt\6.8.3\msvc2022_64\include;D:\tools\Qt\6.8.3\msvc2022_64\include\QtWidgets;D:\tools\Qt\6.8.3\msvc2022_64\include\QtGui;D:\tools\Qt\6.8.3\msvc2022_64\include\QtCore;C:\Users\xuming\AppData\Local\Temp\zacq4ixk.pid;/include;D:\tools\Qt\6.8.3\msvc2022_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\xuming\AppData\Local\Temp\zjvdv4jq.nz4;D:\tools\Qt\6.8.3\msvc2022_64\include;D:\tools\Qt\6.8.3\msvc2022_64\include\QtWidgets;D:\tools\Qt\6.8.3\msvc2022_64\include\QtGui;D:\tools\Qt\6.8.3\msvc2022_64\include\QtCore;C:\Users\xuming\AppData\Local\Temp\zjvdv4jq.nz4;/include;D:\tools\Qt\6.8.3\msvc2022_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>.\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
